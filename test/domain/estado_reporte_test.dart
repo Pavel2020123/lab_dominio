@@ -54,7 +54,7 @@ void main() {
 
     test('8. dos reportes con los mismos datos son iguales', () {
       final a = reporteBase;
-      final b = reporteBase.copyWith(); 
+      final b = reporteBase.copyWith();
       expect(a, equals(b));
     });
 
@@ -67,13 +67,18 @@ void main() {
       expect(reporteBase.estaResuelto, isFalse);
     });
 
-    test('11. la antigüedad es mayor a cero instantes después de crearlo', () async {
-      final reporte = Reporte(
-        id: '2', titulo: 'Test', descripcion: 'Test',
-        ubicacion: const Ubicacion(latitud: 0, longitud: 0),
-        creadoEn: DateTime.now().subtract(const Duration(seconds: 1)),
-      );
-      expect(reporte.antiguedad.inMilliseconds, greaterThan(0));
-    });
+    test(
+      '11. la antigüedad es mayor a cero instantes después de crearlo',
+      () async {
+        final reporte = Reporte(
+          id: '2',
+          titulo: 'Test',
+          descripcion: 'Test',
+          ubicacion: const Ubicacion(latitud: 0, longitud: 0),
+          creadoEn: DateTime.now().subtract(const Duration(seconds: 1)),
+        );
+        expect(reporte.antiguedad.inMilliseconds, greaterThan(0));
+      },
+    );
   });
 }

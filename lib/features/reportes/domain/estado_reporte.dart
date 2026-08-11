@@ -2,7 +2,9 @@ sealed class EstadoReporte {
   const EstadoReporte();
 }
 
-final class Borrador extends EstadoReporte { const Borrador(); }
+final class Borrador extends EstadoReporte {
+  const Borrador();
+}
 
 final class Enviado extends EstadoReporte {
   const Enviado(this.enviadoEn);
